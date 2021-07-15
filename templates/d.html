@@ -1,0 +1,76 @@
+<html>
+  <head>
+
+      <title> canna</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+   <script>
+    $(document).ready(function() {
+    $('#eg').DataTable( {
+
+      } );
+    } );
+   </script>
+
+<style>
+ 
+  td {
+         width: 100px;
+         text-align: center;
+         border: 1px solid black;
+         
+       }
+  table.dataTable tbody th, table.dataTable tbody td {
+    padding: 10px 0px;
+}
+ </style>
+
+
+  </head>
+
+<body>
+<h1 style="position: relative; left: 600px;">CANNA CONTINENTAL</h1>
+
+  <table id="eg" class="stripe" style="width:0px">
+    <thead>
+        <tr>
+            <th>Product Reference</th>
+            <th>Product Name</th>
+             <th>Product Category</th>
+             <th>UOM</th>
+             <th>Type</th>
+             <th>Weight by unit</th>
+            <th>Weight by cs </th>
+            <th>Unit per cs </th>
+            <th>Pieces full pallet </th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for index in dff.index: %}
+      <tr>
+        <td>{{dff["Product Reference"][index]}}</td>
+        <td>{{dff["Product Name"][index]}}</td>
+          <td>{{dff["Product Category"][index]}}</td>
+          <td>{{dff["UOM"][index]}}</td>
+          <td>{{dff["Type"][index]}}</td>
+          <td>{{dff["Weight by unit"][index]}}</td>
+          <td>{{dff["Weight by cs"][index]}}</td>
+          <td>{{dff["Unit per cs"][index]}}</td>
+          <td>{{dff["Pieces full pallet"][index]}}</td>
+      {% endfor %}
+    </tr>
+
+    </tbody>
+    <tfoot>
+    </tfoot>
+</table>
+
+
+
+
+
+
+
+</body>
+</html>
